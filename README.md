@@ -1,4 +1,4 @@
-# Allan Lab Website
+# Wireless Systems Lab Website
 
 This is the website of our academic research group at Leiden University.
 

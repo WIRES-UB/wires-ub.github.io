@@ -1,0 +1,32 @@
+- name: Sai Roshan Ayyalasomayajula
+  photo: 
+  info: Assistant Professor of Computer Science and Engineering
+  email: roshana@buffalo.edu
+  number_educ: 3
+  education1: Ph.D. in Signal and Image Processing, University of California San Diego, 2023
+  education2: M.S. in Electrical and Computer Engineering, University of California San Diego, 2019
+  education3: B.Tech in Electronics and Communication Engineering, IIT Roorkee, 2016
+
+- name: Tahsin Fuad Hasan
+  photo: 
+  info: PhD Student, started Jan 2024
+  email: tahsinfu@buffalo.edu
+  number_educ: 1
+  education1: B.S in Mechatronics Engineering, International Islamic University, Malaysia, 2022
+
+- name: Long Duong
+  photo: 
+  info: PhD Student, started Aug 2024
+  email: ngoclong@buffalo.edu
+  number_educ: 1
+  education1: B.S in Electrical Engineering, Texas Tech University, 2022
+
+- name: Sai Bharadwaj Sirigadi
+  photo:
+  info: PhD Student, started Jan 2025
+  email: ssirigad@buffalo.edu
+  number_educ: 1
+  education1: M.S in Robotics, University at Buffalo, 2024
+  education2:
+  education3:
+  education4:

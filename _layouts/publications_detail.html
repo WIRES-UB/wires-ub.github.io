@@ -1,0 +1,279 @@
+<!-- ---
+layout: default
+--- -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Academic Project Page</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/publications/bulma.min.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/publications/bulma-carousel.min.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/publications/bulma-slider.min.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/publications/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/publications/index.scss">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="{{ site.baseurl }}/js/publications/fontawesome.all.min.js"></script>
+  <script src="{{ site.baseurl }}/js/publications/bulma-carousel.min.js"></script>
+  <script src="{{ site.baseurl }}/js/publications/bulma-slider.min.js"></script>
+  <script src="{{ site.baseurl }}/js/publications/index.js"></script>
+  <!-- Optional Meta Tags for social media -->
+  {% if page.meta_description %}
+    <meta name="description" content="{{ page.meta_description }}">
+  {% endif %}
+  {% if page.og_title %}
+    <meta property="og:title" content="{{ page.og_title }}"/>
+  {% endif %}
+  {% if page.og_description %}
+    <meta property="og:description" content="{{ page.og_description }}"/>
+  {% endif %}
+  {% if page.og_url %}
+    <meta property="og:url" content="{{ page.og_url }}"/>
+  {% endif %}
+  {% if page.og_image %}
+    <meta property="og:image" content="{{ page.og_image }}" />
+  {% endif %}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{ page.title | default: "Academic Project Page" }}</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+
+<body>
+<!-- Hero section -->
+<section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <!-- Project title -->
+            <h1 class="title is-1 publication-title">{{ page.project_title }}</h1>
+            
+            <!-- Authors block -->
+            <div class="is-size-5 publication-authors">
+              {% for author in page.authors %}
+                <span class="author-block">
+                  <a href="{{ author.link }}" target="_blank">{{ author.name }}</a>
+                  {% if author.equal_contribution %}<sup>*</sup>{% endif %}
+                </span>{% if forloop.last == false %},{% endif %}
+              {% endfor %}
+            </div>
+            
+            <!-- Institution and Conference -->
+            {% if page.institution or page.conference %}
+            <div class="is-size-5 publication-authors">
+                <span class="author-block">{{ page.institution }}<br>{{ page.conference }}</span>
+                {% if page.institution %}
+                <span class="eql-cntrb">
+                    <small><br><sup>*</sup>Indicates Equal Contribution</small>
+                </span>
+                {% endif %}
+            </div>
+            <!-- Add space after the equal contribution text -->
+            <br> <!-- This adds extra space after the section -->
+            {% endif %}
+  
+            <!-- Links section -->
+            <div class="publication-links">
+              {% if page.arxiv_pdf %}
+                <span class="link-block">
+                  <a href="{{ page.arxiv_pdf }}" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+              {% endif %}
+              
+              {% if page.supplementary_pdf %}
+                <span class="link-block">
+                  <a href="{{ page.supplementary_pdf }}" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Supplementary</span>
+                  </a>
+                </span>
+              {% endif %}
+              
+              {% if page.github_repo %}
+                <span class="link-block">
+                  <a href="{{ page.github_repo }}" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code</span>
+                  </a>
+                </span>
+              {% endif %}
+
+              {% if page.slides_pdf %}
+              <span class="link-block">
+                <a href="{{ page.slides_pdf }}" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Slides</span>
+                </a>
+              </span>
+            {% endif %}
+              
+              <!-- Optional arxiv abstract link -->
+              {% if page.arxiv_id %}
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/{{ page.arxiv_id }}" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="ai ai-arxiv"></i></span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Hero section -->
+  
+
+<!-- Teaser video-->
+{% if page.teaser_video %}
+    <section class="hero teaser" style="margin-top: -40px;">
+        <div class="container is-max-desktop">
+        <div class="hero-body">
+            <video poster="" id="tree" autoplay controls muted loop height="100%">
+            <!-- Your video here -->
+            <source src="{{ page.teaser_video }}" type="video/mp4">
+            </video>
+            {% if page.teaser_description %}
+            <h2 class="subtitle has-text-centered">{{ page.teaser_description }}</h2>
+            {% endif %}
+        </div>
+        </div>
+    </section>
+{% endif %}
+  <!-- End teaser video -->
+
+  <!-- Paper abstract section -->
+  {% if page.abstract %}
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>{{ page.abstract }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+
+<!-- Image carousel -->
+{% if page.carousel_images %}
+<section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          {% for image in page.carousel_images %}
+            <div class="item">
+              <!-- Image with added class for size control -->
+              <img class="carousel-image" src="{{ image.src }}" alt="{{ image.alt }}"style="max-width: 100%; height: 500px;display: block; margin: 0 auto;"/>
+              {% if image.description %}
+                <h2 class="subtitle has-text-centered">
+                  {{ image.description }}
+                </h2>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+<!-- Youtube video -->
+{% if page.youtube_video %}
+<section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container">
+        <!-- Paper video. -->
+        <h2 class="title is-3"style="text-align: center; width: 100%;">Video Presentation</h2>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <div class="publication-video">
+              <!-- Youtube embed code here -->
+              <iframe src="{{ page.youtube_video }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
+                style="width: 100%; height: 450px; max-width: 100%; margin: 0 auto;">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+<!-- Poster section -->
+{% if page.poster_pdf %}
+<section class="hero is-small is-light">
+    <div class="hero-body">
+    <div class="container">
+        <h2 class="title"style="text-align: center; width: 100%;">Poster</h2>
+        <!-- Corrected iframe tag -->
+        <iframe src="{{ page.poster_pdf }}" width="100%" height="550">
+        </iframe>
+    </div>
+    </div>
+</section>
+{% endif %}
+
+
+
+<!--BibTex citation -->
+{% if page.bibtex %}
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title"style="text-align: center; width: 100%;">BibTeX</h2>
+      <pre><code>{{page.bibtex}}</code></pre>
+    </div>
+</section>
+{% endif %}
+<!--End BibTex citation -->
+
+  <!-- Footer section -->
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content" style="text-align: center; width: 100%;">
+            <p>This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

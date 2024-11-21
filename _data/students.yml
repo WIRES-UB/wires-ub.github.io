@@ -1,0 +1,22 @@
+#- name:
+#  photo: rock.jpg
+#  info:
+#  email:
+#  number_educ:
+#  education1:
+#  education2:
+#  education3:
+#  education4:
+
+- name: Shreyas Athreya Venkatesh
+  photo: 
+  info: Master student
+  email: venkate7@buffalo.edu
+  number_educ: 0
+  education1:
+- name: Dharmi Vipesh Khadela
+  photo:
+  info: Bachelor student
+  email: dharmikh@buffalo.edu
+  number_educ: 0
+  education1:
