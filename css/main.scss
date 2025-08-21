@@ -40,10 +40,21 @@ pubtit {
 firstp {
 }
 
-.container-fluid {
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 1000px; /* or 950px */
+// .container-fluid {
+//   margin-right: auto;
+//   margin-left: auto;
+//   max-width: 1000px; /* or 950px */
+// } */
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 
 /* Home, News */
