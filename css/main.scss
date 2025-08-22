@@ -102,6 +102,79 @@ firstp {
     margin-right: 30px;
 }
 
+/* Footer styling - white text on blue background */
+#footer .panel-footer {
+    color: #ffffff !important;
+}
+
+#footer .panel-footer a {
+    color: #ffffff !important;
+}
+
+#footer .panel-footer a:hover {
+    color: #ffffff !important;
+    text-decoration: underline;
+}
+
+/* Navbar brand styling - Arial Bold */
+.navbar-brand {
+    font-family: Arial, sans-serif !important;
+    font-weight: bold !important;
+}
+
+/* Navbar navigation links styling - Arial */
+.navbar-nav > li > a {
+    font-family: Arial, sans-serif !important;
+}
+
+/* Reduce space between top ribbon and Welcome heading */
+#homeid h1 {
+    margin-top: -10px !important;
+    padding-top: 0 !important;
+}
+
+/* Justify text in home page main content */
+#homeid {
+    text-align: justify !important;
+}
+
+/* Carousel image standardization and styling */
+.carousel .item img {
+    width: 100% !important;
+    height: 400px !important; /* Fixed height for all slides */
+    object-fit: cover !important; /* Maintain aspect ratio while filling container */
+    border: 3px solid #005bbb !important; /* Blue outline */
+    border-radius: 5px !important; /* Slightly rounded corners */
+}
+
+/* Ensure carousel container has consistent height */
+.carousel .carousel-inner {
+    height: 400px !important;
+}
+
+.carousel .item {
+    height: 400px !important;
+}
+
+/* Move footer to bottom */
+#footer {
+    margin-top: 50px !important;
+    position: relative;
+    bottom: 0;
+}
+
+/* Ensure page has minimum height to push footer down */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Make main content area grow to fill space */
+.container-fluid {
+    flex: 1;
+}
+
 
 
 
