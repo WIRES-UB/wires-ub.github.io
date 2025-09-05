@@ -3,7 +3,7 @@ title: "Wireless Systems - Research"
 layout: textlay
 excerpt: "Wireless Systems -- Research"
 sitemap: false
-permalink: /research/localization
+permalink: /research/localization/
 ---
 
 
