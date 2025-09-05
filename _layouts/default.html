@@ -15,6 +15,22 @@
 
     {% include footer.html %}
 
-  </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="{{ site.url }}{{ site.baseurl }}/js/bootstrap.min.js"></script>
+
+    <script>
+      // Allow dropdown parent link to be clickable on desktop
+      $(document).ready(function() {
+        $('a.dropdown-toggle').click(function(e) {
+          if ($(window).width() > 767) {
+            if (this.href) {
+              window.location.href = this.href;
+            }
+          }
+          // On mobile, Bootstrap's default JS will handle the click to open the dropdown
+        });
+      });
+    </script>
+    </body>
 
 </html>

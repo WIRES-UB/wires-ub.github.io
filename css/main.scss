@@ -188,7 +188,55 @@ body {
     flex: 1;
 }
 
+/* Make main content area grow to fill space */
+.container-fluid {
+    flex: 1;
+}
 
+/* Make dropdowns appear on hover on desktop */
+@media (min-width: 768px) {
+  .navbar-nav > li.dropdown:hover > .dropdown-menu {
+    display: block;
+  }
+}
 
+/* Research Page Boxes */
+.research-box {
+  display: block;
+  padding: 0px;
+  margin-bottom: 25px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  background-color: #fff;
+  min-height: 200px; /* Use min-height for flexibility */
+}
 
+.research-box:hover {
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+}
 
+.research-box h3 {
+  margin-top: 0;
+  color: #003366;
+}
+
+.research-box img {
+  border-radius: 5px;
+  max-width: 100%; /* Ensure image is responsive */
+}
+
+/* Helper class to vertically align columns */
+.vertical-align {
+  display: flex;
+  align-items: center; /* This is the key for vertical alignment */
+}
+
+.research-page-container {
+  max-width: 800px; /* Adjust this value to change margins */
+}
