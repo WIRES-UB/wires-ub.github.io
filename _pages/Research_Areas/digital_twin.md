@@ -25,18 +25,19 @@ permalink: /research/digital-twins/
 
   <!-- Publications Section -->
   <h2>References</h2>
-  <hr>
-  <div class="publications-list">
-    {% for publi in site.data.publist %}
-      {% if publi.category == "localization" %}
-        <div class="publication-item">
-          <p class="pub-title">{{ publi.title }}</p>
-          <p class="pub-authors"><em>{{ publi.authors }}</em></p>
-          <a href="{{ publi.link.url }}" target="_blank">{{ publi.link.display }}</a>
-        </div>
-      {% endif %}
-    {% endfor %}
-  </div>
+  
+  <a href="https://wcsng.ucsd.edu/locap/" class="research-box">
+    <div class="row vertical-align">
+      <div class="col-md-6">
+        <img src="{{ site.baseurl }}/images/Research_Pics/Digital_Twin/locap_deployed-800.webp" alt="Privacy for Sensing" class="img-responsive">
+      </div>
+      <div class="col-md-6">
+        <h3>LocAP: Autonomous millimeter accurate mapping of WiFi infrastructure</h3>
+        <p>Roshan Ayyalasomayajula, Aditya Arun, Chenfeng Wu, Shrivatsan Rajagopalan, Shreya Ganesaraman, Aravind Seetharaman, Ish Kumar Jain, and Dinesh Bharadia</p>
+        <p><i>In 17th USENIX Symposium on Networked Systems Design and Implementation (NSDI 20)</i>, 2020</p>
+      </div>
+    </div>
+  </a>
 
 </div>
 {:/nomarkdown}

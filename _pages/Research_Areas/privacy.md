@@ -26,18 +26,19 @@ permalink: /research/privacy/
 
   <!-- Publications Section -->
   <h2>References</h2>
-  <hr>
-  <div class="publications-list">
-    {% for publi in site.data.publist %}
-      {% if publi.category == "localization" %}
-        <div class="publication-item">
-          <p class="pub-title">{{ publi.title }}</p>
-          <p class="pub-authors"><em>{{ publi.authors }}</em></p>
-          <a href="{{ publi.link.url }}" target="_blank">{{ publi.link.display }}</a>
-        </div>
-      {% endif %}
-    {% endfor %}
-  </div>
+  
+  <a href="https://wcsng.ucsd.edu/mirage/" class="research-box">
+    <div class="row vertical-align">
+      <div class="col-md-6">
+        <img src="{{ site.baseurl }}/images/Research_Pics/Privacy/mirage-800_1.webp" alt="Privacy for Sensing" class="img-responsive">
+      </div>
+      <div class="col-md-6">
+        <h3>Users are Closer than they Appear: Protecting User Location from WiFi APs</h3>
+        <p>Roshan Ayyalasomayajula, Aditya Arun, Wei Sun, and Dinesh Bharadia</p>
+        <p><i>In Proceedings of the 24th International Workshop on Mobile Computing Systems and Applications</i>, 2023</p>
+      </div>
+    </div>
+  </a>
 
 </div>
 {:/nomarkdown}

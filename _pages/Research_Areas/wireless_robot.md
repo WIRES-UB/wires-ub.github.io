@@ -25,18 +25,45 @@ permalink: /research/robotics/
 
   <!-- Publications Section -->
   <h2>References</h2>
-  <hr>
-  <div class="publications-list">
-    {% for publi in site.data.publist %}
-      {% if publi.category == "localization" %}
-        <div class="publication-item">
-          <p class="pub-title">{{ publi.title }}</p>
-          <p class="pub-authors"><em>{{ publi.authors }}</em></p>
-          <a href="{{ publi.link.url }}" target="_blank">{{ publi.link.display }}</a>
-        </div>
-      {% endif %}
-    {% endfor %}
-  </div>
+  
+  <a href="https://wcsng.ucsd.edu/p2slam/" class="research-box">
+    <div class="row vertical-align">
+      <div class="col-md-6">
+        <img src="{{ site.baseurl }}/images/Research_Pics/Robotics/p2slam-800.webp" alt="Privacy for Sensing" class="img-responsive">
+      </div>
+      <div class="col-md-6">
+        <h3>P2slam: Bearing based wifi slam for indoor robots</h3>
+        <p>Aditya Arun, Roshan Ayyalasomayajula, William Hunter, and Dinesh Bharadia</p>
+        <p><i>IEEE Robotics and Automation Letters</i>, 2022</p>
+      </div>
+    </div>
+  </a>
+
+  <a href="https://wcsng.ucsd.edu/viwid" class="research-box">
+    <div class="row vertical-align">
+      <div class="col-md-6">
+        <img src="{{ site.baseurl }}/images/Research_Pics/Robotics/viwid-800.webp" alt="Privacy for Sensing" class="img-responsive">
+      </div>
+      <div class="col-md-6">
+        <h3>ViWiD: Leveraging WiFi for Robust and Resource-Efficient SLAM</h3>
+        <p>Aditya Arun, William Hunter, Roshan Ayyalasomayajula, and Dinesh Bharadia</p>
+        <p><i>arXiv preprint arXiv:2209.08091</i>, 2022</p>
+      </div>
+    </div>
+  </a>
+
+  <a href="https://wcsng.ucsd.edu/locap/" class="research-box">
+    <div class="row vertical-align">
+      <div class="col-md-6">
+        <img src="{{ site.baseurl }}/images/Research_Pics/Digital_Twin/locap_deployed-800.webp" alt="Privacy for Sensing" class="img-responsive">
+      </div>
+      <div class="col-md-6">
+        <h3>LocAP: Autonomous millimeter accurate mapping of WiFi infrastructure</h3>
+        <p>Roshan Ayyalasomayajula, Aditya Arun, Chenfeng Wu, Shrivatsan Rajagopalan, Shreya Ganesaraman, Aravind Seetharaman, Ish Kumar Jain, and Dinesh Bharadia</p>
+        <p><i>In 17th USENIX Symposium on Networked Systems Design and Implementation (NSDI 20)</i>, 2020</p>
+      </div>
+    </div>
+  </a>
 
 </div>
 {:/nomarkdown}
