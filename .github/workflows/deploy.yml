@@ -30,16 +30,14 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-        working-directory: wires-ub-next
 
       - name: Build
         run: npm run build
-        working-directory: wires-ub-next
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: wires-ub-next/out
+          path: out
 
   deploy:
     environment:
