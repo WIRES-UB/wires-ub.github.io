@@ -1,101 +1,117 @@
-import Image from "next/image";
+// Home page — the first page visitors see at the root URL "/"
+import { Metadata } from "next";
+import Carousel from "@/components/home/Carousel";
+import NewsSidebar from "@/components/home/NewsSidebar";
+import ResearchCard from "@/components/research/ResearchCard";
+import { researchAreas } from "@/data/research";
 
-export default function Home() {
+// Metadata shown in the browser tab
+export const metadata: Metadata = {
+  title: "WiRES Lab - Home",
+  description:
+    "Wireless Robotics and Embedded Systems Lab at the University at Buffalo.",
+};
+
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="max-w-7xl mx-auto px-4 py-10">
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Hero section — two columns on large screens: main content + sidebar */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-14">
+
+        {/* Main content column: lab intro, carousel, and description paragraphs */}
+        <div className="lg:col-span-2 space-y-6">
+          <div>
+            <h1 className="text-3xl font-bold text-ub-darkblue mb-3">
+              Wireless Robotics and Embedded Systems Lab
+            </h1>
+            <p className="text-gray-700 leading-relaxed">
+              We are a dynamic research group at the{" "}
+              <a
+                href="https://www.buffalo.edu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-ub-blue hover:underline"
+              >
+                University at Buffalo
+              </a>
+              . Our mission is to advance the integration of wireless systems
+              into robotics, focusing on innovative solutions for challenges such
+              as radar-based sensing, Wi-Fi-based localization, and their
+              applications in robotics and autonomous systems.
+            </p>
+          </div>
+
+          {/* Image slideshow carousel */}
+          <Carousel />
+
+          {/* Additional description paragraphs about the lab's focus areas */}
+          <div className="space-y-4 text-gray-700 leading-relaxed text-sm">
+            <p>
+              One of our key focuses is developing innovative localization
+              solutions for tiny robots that lack traditional sensors such as
+              encoders. By leveraging wireless signals, including Wi-Fi RSSI
+              (Received Signal Strength Indicator), we aim to achieve precise
+              and robust localization in environments where traditional methods
+              are impractical. This enables the deployment of cost-effective,
+              lightweight robots in a variety of applications.
+            </p>
+            <p>
+              Additionally, we are scaling these tiny robots into cooperative
+              swarm systems, exploring decentralized control, communication, and
+              mapping strategies. By combining Wi-Fi localization with swarm
+              robotics principles, we aim to enhance multi-robot coordination
+              for tasks like search-and-rescue, environmental monitoring, and
+              warehouse automation.
+            </p>
+            <p>
+              In addition, our lab is pioneering the use of RF imaging
+              technology for plastic waste recycling. Traditional camera systems
+              often struggle to detect and classify materials beneath surface
+              layers, limiting their effectiveness in sorting processes. By
+              utilizing RF imaging, we can penetrate these upper layers and
+              obtain critical information about the composition and location of
+              buried plastics. This innovative approach has the potential to
+              revolutionize waste recycling by improving sorting accuracy and
+              efficiency, ultimately contributing to more sustainable practices
+              in waste management.
+            </p>
+            <p>
+              Furthermore, we are exploring the use of Wi-Fi as a robust sensor
+              for localization, especially in environments where traditional
+              sensors like cameras face limitations. Cameras often struggle in
+              challenging lighting conditions, such as low light, glare, or
+              excessive brightness. Wi-Fi-based localization offers a resilient
+              alternative that is not affected by visual disruptions, providing
+              consistent and reliable positioning even in dynamic and
+              unpredictable environments.
+            </p>
+            <p>
+              Our mission is to push the boundaries of robotics and wireless
+              systems, creating scalable, impactful solutions for real-world
+              challenges while contributing to advancements in technology and
+              sustainability.
+            </p>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        {/* Sidebar column: news feed */}
+        <div className="lg:col-span-1">
+          <NewsSidebar />
+        </div>
+      </div>
+
+      {/* Research highlights section — shows all research area cards in a 2-column grid */}
+      <section>
+        <h2 className="text-2xl font-bold text-ub-darkblue mb-6">
+          Research Areas
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {researchAreas.map((area) => (
+            <ResearchCard key={area.slug} area={area} />
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

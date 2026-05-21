@@ -11,6 +11,8 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        "ub-blue": "#015bbb",
+        "ub-darkblue": "#003366",
       },
     },
   },
